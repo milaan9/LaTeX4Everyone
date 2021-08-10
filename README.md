@@ -13,26 +13,42 @@
 <!--<img src="https://badges.pufler.dev/contributors/milaan9/01_Python_Introduction?size=50&padding=5&bots=true" alt="milaan9"/>-->
  
  
-# LaTeX4Everyone
+# LaTeX4Everyone - A document preparation system
+**[LaTeX](https://www.latex-project.org/)** is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. LaTeX is the de facto standard for the communication and publication of scientific documents. LaTeX is available as **[free software](https://www.latex-project.org/lppl/)**.
 
 ## Introduction 👋
 
-Objected oriented programming as a discipline has gained a universal following among developers. Python, an in-demand programming language also follows an object-oriented programming paradigm. It deals with declaring Python classes and objects which lays the foundation of OOPs concepts. This article on “object oriented programming python” will walk you through declaring python classes, instantiating objects from them along with the four methodologies of OOPs. 
+With LaTeX, you can create professional documents and presentations. If you are a student, researcher, Data Scientist, or any kind of scientist or professional in general, then it's not bad idea if you have things documented with LaTeX. Yes, every scientist or engineer needs to know math, and there isn't anything better for writing math than LaTeX.
 
 
 ## Table of contents 📋
 
 
-[001_Python_OOPs_Concepts](https://github.com/milaan9/06_Python_Object_Class/blob/main/001_Python_OOPs_Concepts.ipynb)
+[001_LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin)
 
 
-[002_Python_Classes_and_Objects](https://github.com/milaan9/06_Python_Object_Class/blob/main/002_Python_Classes_and_Objects.ipynb)
+[002_LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc)
 
 
-[003_Python_Inheritance](https://github.com/milaan9/06_Python_Object_Class/blob/main/003_Python_Inheritance.ipynb)
+[003_LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style)
 
 
-[004_Python_Operator_Overloading](https://github.com/milaan9/06_Python_Object_Class/blob/main/004_Python_Operator_Overloading.ipynb)
+[004_LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics)
+
+
+[005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput](https://github.com/milaan9/LaTeX4Everyone/tree/main/005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput)
+
+
+[006_LaTex_Presentation_beamer](https://github.com/milaan9/LaTeX4Everyone/tree/main/006_LaTex_Presentation_beamer)
+
+
+[007_LaTex_tikz](https://github.com/milaan9/LaTeX4Everyone/tree/main/007_LaTex_tikz)
+
+
+[008_LaTex_Gantt_Chart](https://github.com/milaan9/LaTeX4Everyone/tree/main/008_LaTex_Gantt_Chart)
+
+
+[LaTeX4Everyone](https://github.com/milaan9/LaTeX4Everyone/blob/main/LaTeX4Everyone.zip)
 
 
 These are online read-only versions.
