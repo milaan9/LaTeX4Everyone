@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\newcommand{\flow}{\rightleftharpoons}
+
+\begin{document}
+\title{Typesetting Mathematics in \LaTeX}
+\author{Dr. Milaan Parmar \\ milaanparmar9@gmail.com}
+\maketitle
+
+
+\section{Introduction} 
+\LaTeX\ is extremely powerful when it comes to typesetting mathematics. It's one of the core strengths of this system. 
+
+\section{Displaying Mathematics}
+There are two ways of displaying maths. One is \emph{inline} and the other is \emph{display} format -- in which the whole math sits on its own set of lines.
+
+
+\subsection{Inline Mode}
+We are going to insert a mathematics equation inline here using a pair of \$ signs:  $E=mc^2$    . As you can see, the display (such as line spacing) does not get messed up by the mathematics as it does with word processing softwares. 
+
+\subsection{Display Mode}
+We can also display equations in their own set of lines. To do this, we can use the equation environment. 
+
+\begin{equation}\label{eq:emc}
+E=mc^2
+\end{equation}
+
+As you can see, \LaTeX\ inserts the equation number automatically. We can refer to it using the \verb|\ref| command just as we referred to sections, figures and tables. (E.g. Equation~\ref{eq:emc}.) To get rid of the equation number, simply use the \emph{star variant} of the equation environment. (For this, you need the \texttt{amsmath} package.)
+
+\begin{equation*}
+E=mc^2
+\end{equation*}
+
+Alternatively, we can use the shorthand keys \verb|\[| and \verb|\]|
+
+\[
+E=mc^2
+\]
+
+\section{Mathematical Features}
+\LaTeX\ has many builtin features and you can get many more easily. Here, we'll see some of these features: 
+
+Addition, subtraction, multiplication and division: 
+
+\[
+x+2 - 25 \times 35 \div 98 
+\]
+
+Superscripts and subscripts: 
+
+\[ x^2  \]
+\[ x_{(i)} \]
+
+
+Summation, union, intersection, big-union, integral: 
+
+\[ \sum_{i=1}^{n}{i^2} \]
+\[ x \cup y \cap z \]
+\[ \bigcup_{i=1}^{n}{x_i} \]
+\[ \int_0^n{x^2} \]
+
+Fractions, brackets, square root: 
+
+\[ \frac{x}{y} \]
+\[ \frac{\sum_i{x^2}}{\int_0^n{x^2}} \]
+\[ \sqrt{\frac{\sqrt{36}} {x^5}} \]
+
+\[ 2 \times \left( \frac{34}{\frac{124}{356}}    \right)  \]
+
+Greek letters: 
+
+\[
+\alpha + \beta + \gamma^* + \Sigma + \Theta + 2_\epsilon 
+\]
+
+Matrices and vectors. For this, you need to include the \texttt{amsmath} package and then use the \texttt{bmatrix} or \texttt{pmatrix} environment: 
+
+\[
+\begin{pmatrix}
+\frac{a}{44} & b \\ 
+c & \sqrt{d} 	
+\end{pmatrix}
+\]
+
+Accents: 
+
+\[ \hat{x} \]
+\[ \hat{\imath} \] 
+\[ \dot{x} \]
+
+See the \texttt{Math} menu in the IDE for other operations. You can refer to ``Short Math Guide for \LaTeX'' for a lot more examples. 
+
+\section{Using Symbols}
+You might come across situations where you need to find new symbols. For this, you can refer to the ``The Comprehensive \LaTeX Symbols List''.  
+
+\[ x \rightleftharpoons  y \]
+
+
+
+(Optional) Since this is a long command, we might want to create a shortcut using the \verb|\newcommand| command in the preamble. This also allows us to later change the symbol without having to change the equations. 
+
+\[ x \flow y \]
+
+\end{document}

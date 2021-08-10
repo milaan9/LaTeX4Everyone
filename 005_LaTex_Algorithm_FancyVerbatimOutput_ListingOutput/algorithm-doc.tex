@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+\title{Algorithms in \LaTeX}
+\author{Dr. Milaan Parmar \\ milaanparmar9@gmail.com}
+\maketitle
+
+
+
+\begin{algorithm}
+\begin{algorithmic}[2]
+\REQUIRE{Randomly populated array}
+\ENSURE{Sorted array}
+\IF{$i\leq0$}
+  \STATE $i\gets1$
+\ELSE 
+  \IF{$i\geq0$} \label{line:impline}
+   \FOR{$j=0$ \TO $10$}
+     \STATE blah()
+     \STATE carryOutSomeProcessing() \label{line:mostimp}
+   \ENDFOR
+  \ENDIF
+\ENDIF
+\RETURN i
+\end{algorithmic}
+\caption{My First Simple Algorithm}
+\label{algo:first}
+\end{algorithm}
+
+And of course, we can refer to the algorithm using \verb|\ref|: See Algorithm~\ref{algo:first} but the good thing is we can also refer to a specific line e.g. Line~\ref{line:impline} or Line~\ref{line:mostimp}.
+
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[border=12pt]{standalone}
+\usepackage{gantt}
+
+\newcommand{\defcolor}{red}
+
+\begin{document}
+
+ \begin{gantt}[drawledgerline=true]{11}{24}
+ 	% vertical, horizontal 'boxes'
+
+    \begin{ganttitle}
+      \numtitle{2012}{3}{2012}{10}
+      % start, label, width 
+      \numtitle{2013}{1}{2013}{12}
+      \numtitle{2014}{1}{2014}{2}
+    \end{ganttitle}
+
+    \begin{ganttitle}
+      \numtitle{3}{1}{12}{1}
+      % start, skip, end, width 
+      
+      \numtitle{1}{1}{12}{1}
+      \numtitle{1}{1}{2}{1}
+    \end{ganttitle}
+
+    \ganttmilestone{Proposal Defense}{0} % Label, position
+    
+    %=======================================
+    \ganttgroup{Background Study}{0}{6} % start, width 
+    \ganttbar[color=\defcolor]{Android Security}{0}{3}
+    \ganttbarcon[color=\defcolor]{Code Analysis}{3}{2}
+    \ganttbarcon[color=\defcolor]{Policy Mechanisms}{5}{1}
+    \ganttmilestonecon{Literature Review Complete}{6}
+    % notice the 'con' at the end -- for continue 
+    
+    %=======================================
+    
+    \ganttbarcon[color=\defcolor]{
+    	\textbf{Formal Specification} % can format labels!
+    }{6}{6}
+    \ganttmilestonecon{Spec Document}{12}
+	
+
+
+    %=======================================
+    \ganttbar[color=blue]{Thesis and Paper Writing}{0}{24}
+  \end{gantt}
+  
+\end{document}

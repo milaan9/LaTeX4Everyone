@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\begin{document}
+\title{Using Bibliogrpahies in \LaTeX}
+\author{Dr. Milaan Parmar}
+\maketitle
+
+% -------------------- Main document --------------------------------
+
+\section{Introduction} 
+Using and managing bibliographies in \LaTeX\ is very easy. These are the steps required to use them: 
+
+\begin{enumerate}
+	\item Create a main document file 
+	\item Create a project
+	\item Collect bibliography entries in a \verb|.bib| file. For this: 
+	   \begin{itemize}
+	     \item Get the bibliography from Google Scholar/ACM or whereever (much easier) or 
+	     \item Write the entry yourself. 
+     \end{itemize}
+	\item Add a \verb|\bibliographystyle| and a \verb|\bibliography| command to your document. 
+	\item \emph{Cite} the references where you need using the key. 
+	\item Build the project a couple of times to get the citations in the main document. 
+\end{enumerate}
+
+\section{Some Background Text}
+We are going to use this section to put some text in our document and at some points, we are going to inset a reference. This, for example, is going to turn into a reference~\cite{se-cs-collab:nauman10}. This ~\cite{nauman2011using} is yet another reference. And so on.\cite{seo2011user}
+
+
+
+
+% -------------------------------------------------------------------
+% add bibliography-related commands here 
+\bibliographystyle{plain}
+\bibliography{bibfile}
+
+\end{document}

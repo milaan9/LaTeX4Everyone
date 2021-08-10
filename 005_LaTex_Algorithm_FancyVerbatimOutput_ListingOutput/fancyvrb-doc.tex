@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{fancyvrb}
+
+
+\begin{document}
+\title{Fancy Verbatim Outputs in \LaTeX}
+\author{Dr. Milaan Parmar \\ milaanparmar9@gmail.com}
+\maketitle
+
+\begin{figure*}
+\begin{Verbatim}[frame=single,label=Sample Label,numbers=left,commandchars=\\\{\}]
+First verbatim \emph{line}. 
+Second verbatim line. \label{line:impline}
+And even more
+\end{Verbatim}
+\caption{blah}
+\end{figure*}
+
+And we can refer to lines as with algorithmic package: Line~\ref{line:impline}.
+
+
+\end{document}

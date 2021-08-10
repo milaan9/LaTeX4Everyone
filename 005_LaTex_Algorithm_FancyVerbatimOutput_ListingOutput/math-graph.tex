@@ -1,0 +1,369 @@
+\documentclass{article}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{geometry}
+\usepackage{tikz}
+
+\usepackage{circuitikz}
+\usetikzlibrary{trees,automata,arrows}
+
+
+\usetikzlibrary{plotmarks}
+% The data files, written on the first run.
+\begin{filecontents}{div_soft.data}
+#MOPS 	Power [mW]
+1.33E-02	10.403432
+1.33E-01	12.53108
+2.66E-01	14.90265
+3.99E-01	17.22483
+5.31E-01	19.58292
+6.64E-01	21.89876
+7.97E-01	24.44624
+9.30E-01	26.6708
+\end{filecontents}
+
+\begin{filecontents}{div_ciu.data}
+# MOPS 	Power [mW]
+4.35E-02	9.562436
+4.35E-01	10.845494
+8.69E-01	12.24356
+1.30E+00	13.66974
+1.74E+00	15.13008
+2.17E+00	16.57845
+2.61E+00	17.97894
+3.04E+00	19.41534
+\end{filecontents}
+
+\begin{filecontents}{div_ciu_oscar.data}
+#MOPS 	Power [mW]
+8.57E-01	11.255013
+9.99E-01	11.4804
+1.14E+00	11.718
+1.29E+00	11.9916
+1.64E+00	12.65854
+2.00E+00	13.308
+2.64E+00	14.484
+3.85E+00	16.8
+\end{filecontents}
+
+\begin{filecontents}{div_ciu_oscar_extrapolated.data}
+# MOPS 	Power [mW]
+4.28E+00	17.56312023
+5.71E+00	20.21127914
+7.14E+00	22.85943805
+8.57E+00	25.50759696
+9.99E+00	28.15575587
+\end{filecontents}
+
+\begin{document}
+\begin{tikzpicture}[y=.2cm, x=.7cm,font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (10,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,30);
+    	%ticks
+    	\foreach \x in {0,...,10}
+     		\draw (\x,1pt) -- (\x,-3pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,5,...,30}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {MOPS};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {Power [mW]};
+
+	%plots
+	\draw plot[mark=*, mark options={fill=white}] 
+		file {div_soft.data};
+	\draw plot[mark=triangle*, mark options={fill=white} ] 
+		file {div_ciu.data};
+	\draw plot[mark=square*, mark options={fill=white}]
+		file {div_ciu_oscar.data};
+	\draw plot[mark=square*]
+		file {div_ciu_oscar_extrapolated.data};  
+    
+	%legend
+	\begin{scope}[shift={(4,4)}] 
+	\draw (0,0) -- 
+		plot[mark=*, mark options={fill=white}] (0.25,0) -- (0.5,0) 
+		node[right]{soft};
+	\draw[yshift=\baselineskip] (0,0) -- 
+		plot[mark=triangle*, mark options={fill=white}] (0.25,0) -- (0.5,0)
+		node[right]{ciu};
+	\draw[yshift=2\baselineskip] (0,0) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,0) -- (0.5,0)
+		node[right]{ciu + oscar};
+	\draw[yshift=3\baselineskip] (0,0) -- 
+		plot[mark=square*, mark options={fill=black}] (0.25,0) -- (0.5,0)
+		node[right]{ciu + oscar extrapolated};
+	\end{scope}
+\end{tikzpicture}
+
+\newpage
+
+\begin{tikzpicture}[scale=3,cap=round]
+  % Local definitions
+  \def\costhirty{0.8660256}
+
+  % Colors
+  \colorlet{anglecolor}{green!50!black}
+  \colorlet{sincolor}{red}
+  \colorlet{tancolor}{orange!80!black}
+  \colorlet{coscolor}{blue}
+
+  % Styles
+  \tikzstyle{axes}=[]
+  \tikzstyle{important line}=[very thick]
+  \tikzstyle{information text}=[rounded corners,fill=red!10,inner sep=1ex]
+
+  % The graphic
+  \draw[style=help lines,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
+
+  \draw (0,0) circle (1cm);
+
+  \begin{scope}[style=axes]
+    \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+
+    \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, 1}
+      \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white]
+            {$\xtext$};
+
+    \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+      \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white]
+            {$\ytext$};
+  \end{scope}
+
+  \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (3mm,0pt) arc(0:30:3mm);
+  \draw (15:2mm) node[anglecolor] {$\alpha$};
+
+  \draw[style=important line,sincolor]
+    (30:1cm) -- node[left=1pt,fill=white] {$\sin \alpha$} +(0,-.5);
+
+  \draw[style=important line,coscolor]
+    (0,0) -- node[below=2pt,fill=white] {$\cos \alpha$} (\costhirty,0);
+
+  \draw[style=important line,tancolor] (1,0) --
+    node [right=1pt,fill=white]
+    {
+      $\displaystyle \tan \alpha \color{black}=
+      \frac{{\color{sincolor}\sin \alpha}}{\color{coscolor}\cos \alpha}$
+    } (intersection of 0,0--30:1cm and 1,0--1,1) coordinate (t);
+
+  \draw (0,0) -- (t);
+
+  \draw[xshift=1.85cm] node [right,text width=6cm,style=information text]
+    {
+      The {\color{anglecolor} angle $\alpha$} is $30^\circ$ in the
+      example ($\pi/6$ in radians). The {\color{sincolor}sine of
+        $\alpha$}, which is the height of the red line, is
+      \[
+      {\color{sincolor} \sin \alpha} = 1/2.
+      \]
+      By the Theorem of Pythagoras we have ${\color{coscolor}\cos^2 \alpha} +
+      {\color{sincolor}\sin^2\alpha} =1$. Thus the length of the blue
+      line, which is the {\color{coscolor}cosine of $\alpha$}, must be
+      \[
+      {\color{coscolor}\cos\alpha} = \sqrt{1 - 1/4} = \textstyle
+      \frac{1}{2} \sqrt 3.
+      \]%
+      This shows that {\color{tancolor}$\tan \alpha$}, which is the
+      height of the orange line, is
+      \[
+      {\color{tancolor}\tan\alpha} = \frac{{\color{sincolor}\sin
+          \alpha}}{\color{coscolor}\cos \alpha} = 1/\sqrt 3.
+      \]%
+    };
+\end{tikzpicture}
+
+\newpage
+
+\def\iangle{35} % Angle of the inclined plane
+
+\def\down{-90}
+\def\arcr{0.5cm} % Radius of the arc used to indicate angles
+
+\begin{tikzpicture}[
+    force/.style={>=latex,draw=blue,fill=blue},
+    axis/.style={densely dashed,gray,font=\small},
+    M/.style={rectangle,draw,fill=lightgray,minimum size=0.5cm,thin},
+    m/.style={rectangle,draw=black,fill=lightgray,minimum size=0.3cm,thin},
+    plane/.style={draw=black,fill=blue!10},
+    string/.style={draw=red, thick},
+    pulley/.style={thick},
+]
+
+\matrix[column sep=1cm] {
+    %% Sketch
+    \draw[plane] (0,-1) coordinate (base)
+                     -- coordinate[pos=0.5] (mid) ++(\iangle:3) coordinate (top)
+                     |- (base) -- cycle;
+    \path (mid) node[M,rotate=\iangle,yshift=0.25cm] (M) {};
+    \draw[pulley] (top) -- ++(\iangle:0.25) circle (0.25cm)
+                   ++ (90-\iangle:0.5) coordinate (pulley);
+    \draw[string] (M.east) -- ++(\iangle:1.5cm) arc (90+\iangle:0:0.25)
+                  -- ++(0,-1) node[m] {};
+
+    \draw[->] (base)++(\arcr,0) arc (0:\iangle:\arcr);
+    \path (base)++(\iangle*0.5:\arcr+5pt) node {$\alpha$};
+    %%
+
+&
+    %% Free body diagram of M
+    \begin{scope}[rotate=\iangle]
+        \node[M,transform shape] (M) {};
+        % Draw axes and help lines
+
+        {[axis,->]
+            \draw (0,-1) -- (0,2) node[right] {$+y$};
+            \draw (M) -- ++(2,0) node[right] {$+x$};
+            % Indicate angle. The code is a bit awkward.
+
+            \draw[solid,shorten >=0.5pt] (\down-\iangle:\arcr)
+                arc(\down-\iangle:\down:\arcr);
+            \node at (\down-0.5*\iangle:1.3*\arcr) {$\alpha$};
+        }
+
+        % Forces
+        {[force,->]
+            % Assuming that Mg = 1. The normal force will therefore be cos(alpha)
+            \draw (M.center) -- ++(0,{cos(\iangle)}) node[above right] {$N$};
+            \draw (M.west) -- ++(-1,0) node[left] {$f_R$};
+            \draw (M.east) -- ++(1,0) node[above] {$T$};
+        }
+
+    \end{scope}
+    % Draw gravity force. The code is put outside the rotated
+    % scope for simplicity. No need to do any angle calculations. 
+    \draw[force,->] (M.center) -- ++(0,-1) node[below] {$Mg$};
+    %%
+
+&
+    %%%
+    % Free body diagram of m
+    \node[m] (m) {};
+    \draw[axis,->] (m) -- ++(0,-2) node[left] {$+$};
+    {[force,->]
+        \draw (m.north) -- ++(0,1) node[above] {$T'$};
+        \draw (m.south) -- ++(0,-1) node[right] {$mg$};
+    }
+
+\\
+};
+\end{tikzpicture}
+
+\newpage
+
+\begin{tikzpicture}[domain=0:4]
+    \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+    \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+    \draw[color=red] plot[id=x] function{x} 
+        node[right] {$f(x) =x$};
+    \draw[color=blue] plot[id=sin] function{sin(x)} 
+        node[right] {$f(x) = \sin x$};
+    \draw[color=orange] plot[id=exp] function{0.05*exp(x)} 
+        node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+\end{tikzpicture}
+
+\newpage 
+
+
+\begin{tikzpicture}[level/.style={sibling distance=60mm/#1}]
+\node [circle,draw] (z){$n$}
+  child {node [circle,draw] (a) {$\frac{n}{2}$}
+    child {node [circle,draw] (b) {$\frac{n}{2^2}$}
+      child {node {$\vdots$}
+        child {node [circle,draw] (d) {$\frac{n}{2^k}$}}
+        child {node [circle,draw] (e) {$\frac{n}{2^k}$}}
+      } 
+      child {node {$\vdots$}}
+    }
+    child {node [circle,draw] (g) {$\frac{n}{2^2}$}
+      child {node {$\vdots$}}
+      child {node {$\vdots$}}
+    }
+  }
+  child {node [circle,draw] (j) {$\frac{n}{2}$}
+    child {node [circle,draw] (k) {$\frac{n}{2^2}$}
+      child {node {$\vdots$}}
+      child {node {$\vdots$}}
+    }
+  child {node [circle,draw] (l) {$\frac{n}{2^2}$}
+    child {node {$\vdots$}}
+    child {node (c){$\vdots$}
+      child {node [circle,draw] (o) {$\frac{n}{2^k}$}}
+      child {node [circle,draw] (p) {$\frac{n}{2^k}$}
+        child [grow=right] {node (q) {$=$} edge from parent[draw=none]
+          child [grow=right] {node (q) {$O_{k = \lg n}(n)$} edge from parent[draw=none]
+            child [grow=up] {node (r) {$\vdots$} edge from parent[draw=none]
+              child [grow=up] {node (s) {$O_2(n)$} edge from parent[draw=none]
+                child [grow=up] {node (t) {$O_1(n)$} edge from parent[draw=none]
+                  child [grow=up] {node (u) {$O_0(n)$} edge from parent[draw=none]}
+                }
+              }
+            }
+            child [grow=down] {node (v) {$O(n \cdot \lg n)$}edge from parent[draw=none]}
+          }
+        }
+      }
+    }
+  }
+};
+\path (a) -- (j) node [midway] {+};
+\path (b) -- (g) node [midway] {+};
+\path (k) -- (l) node [midway] {+};
+\path (k) -- (g) node [midway] {+};
+\path (d) -- (e) node [midway] {+};
+\path (o) -- (p) node [midway] {+};
+\path (o) -- (e) node (x) [midway] {$\cdots$}
+  child [grow=down] {
+    node (y) {$O\left(\displaystyle\sum_{i = 0}^k 2^i \cdot \frac{n}{2^i}\right)$}
+    edge from parent[draw=none]
+  };
+\path (q) -- (r) node [midway] {+};
+\path (s) -- (r) node [midway] {+};
+\path (s) -- (t) node [midway] {+};
+\path (s) -- (l) node [midway] {=};
+\path (t) -- (u) node [midway] {+};
+\path (z) -- (u) node [midway] {=};
+\path (j) -- (t) node [midway] {=};
+\path (y) -- (x) node [midway] {$\Downarrow$};
+\path (v) -- (y)
+  node (w) [midway] {$O\left(\displaystyle\sum_{i = 0}^k n\right) = O(k \cdot n)$};
+\path (q) -- (v) node [midway] {=};
+\path (e) -- (x) node [midway] {+};
+\path (o) -- (x) node [midway] {+};
+\path (y) -- (w) node [midway] {$=$};
+\path (v) -- (w) node [midway] {$\Leftrightarrow$};
+\path (r) -- (c) node [midway] {$\cdots$};
+\end{tikzpicture}
+
+
+
+\newpage 
+
+
+\begin{tikzpicture}
+[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,semithick]
+
+  \tikzstyle{every state}=[draw=black,fill=white]
+  \tikzstyle{initial}=[double]
+  
+  \node[initial,state] (A)                    {$q_a$};
+  \node[state]         (B) [above right of=A] {$q_b$};
+  \node[state]         (D) [below right of=A] {$q_d$};
+  \node[state]         (C) [below right of=B] {$q_c$};
+  \node[state]         (E) [below of=D]       {$q_e$};
+
+  \path (A) edge              node {0,1,L} (B)
+            edge              node {1,1,R} (C)
+        (B) edge [loop above] node {1,1,L} (B)
+            edge              node {0,1,L} (C)
+        (C) edge              node {0,1,L} (D)
+            edge [bend left]  node {1,0,R} (E)
+        (D) edge [loop below] node {1,1,R} (D)
+            edge              node {0,1,R} (A)
+        (E) edge [bend left]  node {1,0,R} (A);
+\end{tikzpicture}
+
+\end{document}

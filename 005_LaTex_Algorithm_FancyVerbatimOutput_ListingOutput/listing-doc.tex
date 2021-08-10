@@ -1,0 +1,26 @@
+\documentclass{article}
+%\usepackage{geometry}
+\usepackage{listings}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\begin{document}
+\title{Listings Example}
+\author{Dr. Milaan Parmar \\ milaanparmar9@gmail.com} 
+\maketitle 
+
+\lstset{language=c++}
+\lstset{caption=Some C++ Code}
+\begin{lstlisting}[frame=single]{}
+for(i = 0; i < 10; i++){
+    // increment the pointer
+    *p++ = i;
+}
+\end{lstlisting}
+
+\lstset{language=java,frame=single,basicstyle=\ttfamily,numbers=left}
+\lstinputlisting[caption=Signing,label=lst:lowertri]{Sign.java}
+
+And we can refer to Listing~\ref{lst:lowertri} in text.
+\end{document}
