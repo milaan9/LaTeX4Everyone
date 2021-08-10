@@ -24,31 +24,31 @@ With LaTeX, you can create professional documents and presentations. If you are 
 ## Table of contents 📋
 
 
-[001_LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin)
+[001_LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin) - Basics of creating a document
 
 
-[002_LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc)
+[002_LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc) - Including Graphics and Tables
 
 
-[003_LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style)
+[003_LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style) - Citations and references 
 
 
-[004_LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics)
+[004_LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics) - Mathematics and algorithm 
 
 
-[005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput](https://github.com/milaan9/LaTeX4Everyone/tree/main/005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput)
+[005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput](https://github.com/milaan9/LaTeX4Everyone/tree/main/005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput) - Tips to make your documents stand out 
 
 
-[006_LaTex_Presentation_beamer](https://github.com/milaan9/LaTeX4Everyone/tree/main/006_LaTex_Presentation_beamer)
+[006_LaTex_Presentation_beamer](https://github.com/milaan9/LaTeX4Everyone/tree/main/006_LaTex_Presentation_beamer) - Presentations in LaTeX 
 
 
-[007_LaTex_tikz](https://github.com/milaan9/LaTeX4Everyone/tree/main/007_LaTex_tikz)
+[007_LaTex_tikz](https://github.com/milaan9/LaTeX4Everyone/tree/main/007_LaTex_tikz) - TikZ (Drawing figures in LaTeX)
 
 
-[008_LaTex_Gantt_Chart](https://github.com/milaan9/LaTeX4Everyone/tree/main/008_LaTex_Gantt_Chart)
+[008_LaTex_Gantt_Chart](https://github.com/milaan9/LaTeX4Everyone/tree/main/008_LaTex_Gantt_Chart) - Time line 
 
 
-[LaTeX4Everyone](https://github.com/milaan9/LaTeX4Everyone/blob/main/LaTeX4Everyone.zip)
+[LaTeX4Everyone](https://github.com/milaan9/LaTeX4Everyone/blob/main/LaTeX4Everyone.zip) - All complete files
 
 
 These are online read-only versions.
