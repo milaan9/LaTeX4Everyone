@@ -24,39 +24,27 @@
 
 With LaTeX, you can create professional documents and presentations. If you are a student, researcher, Data Scientist, or any kind of scientist or professional in general, then it's not bad idea if you have things documented with LaTeX. Yes, every scientist or engineer needs to know math, and there isn't anything better for writing math than LaTeX.
 
+---
 
 ## Table of contents 📋
 
-
-[001_LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin) - Basics of creating a document
-
-
-[002_LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc) - Including Graphics and Tables
-
-
-[003_LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style) - Citations and references 
-
-
-[004_LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics) - Mathematics and algorithm 
-
-
-[005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput](https://github.com/milaan9/LaTeX4Everyone/tree/main/005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput) - Tips to make your documents stand out 
-
-
-[006_LaTex_Presentation_beamer](https://github.com/milaan9/LaTeX4Everyone/tree/main/006_LaTex_Presentation_beamer) - Presentations in LaTeX 
-
-
-[007_LaTex_tikz](https://github.com/milaan9/LaTeX4Everyone/tree/main/007_LaTex_tikz) - TikZ (Drawing figures in LaTeX)
-
-
-[008_LaTex_Gantt_Chart](https://github.com/milaan9/LaTeX4Everyone/tree/main/008_LaTex_Gantt_Chart) - Time line 
-
-
-[LaTeX4Everyone](https://github.com/milaan9/LaTeX4Everyone/blob/main/LaTeX4Everyone.zip) - All complete files
+| **No.** | **Name** | 
+| ------- | -------- | 
+| 01 | **[LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin)** - Basics of creating a document
+|
+| 02 | **[LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc)** - Including Graphics and Tables |
+| 03 | **[LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style)** - Citations and references | 
+| 04 | **[LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics)** - Mathematics and algorithm | 
+| 05 | **[LaTex_Algorithm_FancyVerbatimOutput_ListingOutput](https://github.com/milaan9/LaTeX4Everyone/tree/main/005_LaTex_Algorithm_FancyVerbatimOutput_ListingOutput)** - Tips to make your documents stand out | 
+| 06 | **[LaTex_Presentation_beamer](https://github.com/milaan9/LaTeX4Everyone/tree/main/006_LaTex_Presentation_beamer)** - Presentations in LaTeX | 
+| 07 | **[LaTex_tikz](https://github.com/milaan9/LaTeX4Everyone/tree/main/007_LaTex_tikz)** - TikZ (Drawing figures in LaTeX) |
+| 08 | **[LaTex_Gantt_Chart](https://github.com/milaan9/LaTeX4Everyone/tree/main/008_LaTex_Gantt_Chart)** - Time line | 
+|    | **[LaTeX4Everyone](https://github.com/milaan9/LaTeX4Everyone/blob/main/LaTeX4Everyone.zip)** - All complete files |
 
 
 These are online read-only versions.
 
+---
 
 ## Frequently asked questions ❔
 
@@ -65,6 +53,8 @@ These are online read-only versions.
 You can ⭐ star this tutorial. Starring is free for you, but it tells me and other people that it was helpful and you like this tutorial.
 
 Go [here](https://github.com/milaan9/06_Python_Object_Class) if you aren't here already and click the "⭐ Star" button in the top right corner. You will be asked to create a GitHub account if you don't already have one.
+
+---
 
 ### How can I read this tutorial without an Internet connection? 🤔
 
@@ -84,6 +74,7 @@ This will clear all the outputs and now you can understand each statement and le
 
 If you have git and you know how to use it, you can also clone the repository instead of downloading a zip and extracting it. An advantage with doing it this way is that you don't need to download the whole tutorial again to get the latest version of it, all you need to do is to pull with git and run ipython notebook again.
 
+---
 
 ## Authors ✍️
 
@@ -95,6 +86,7 @@ If you have trouble with this tutorial please tell me about it by [Create an iss
 
 If you like this tutorial, please [give it a ⭐ star](https://github.com/milaan9/06_Python_Object_Class).
 
+---
 
 ## Licence 📜
 
