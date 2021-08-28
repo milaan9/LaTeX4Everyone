@@ -31,7 +31,7 @@ With LaTeX, you can create professional documents and presentations. If you are 
 | **No.** | **Name** | 
 | ------- | -------- | 
 | 01 | **[LaTex_Begin](https://github.com/milaan9/LaTeX4Everyone/tree/main/001_LaTex_Begin)** - Basics of creating a document
-|
+
 | 02 | **[LaTex_First_Doc](https://github.com/milaan9/LaTeX4Everyone/tree/main/002_LaTex_First_Doc)** - Including Graphics and Tables |
 | 03 | **[LaTex_Using_Bib_and_Conference_style](https://github.com/milaan9/LaTeX4Everyone/tree/main/003_LaTex_Using_Bib_and_Conference_style)** - Citations and references | 
 | 04 | **[LaTex_Typesetting_Mathematics](https://github.com/milaan9/LaTeX4Everyone/tree/main/004_LaTex_Typesetting_Mathematics)** - Mathematics and algorithm | 
