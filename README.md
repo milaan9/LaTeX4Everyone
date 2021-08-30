@@ -22,7 +22,7 @@
 
 ## Introduction 👋
 
-With LaTeX, you can create professional documents and presentations. If you are a student, researcher, Data Scientist, or any kind of scientist or professional in general, then it's not bad idea if you have things documented with LaTeX. Yes, every scientist or engineer needs to know math, and there isn't anything better for writing math than LaTeX.
+With LaTeX, you can also create professional documents and presentations. If you are a student, researcher, Data Scientist, or any kind of scientist or professional in general, then it is not bad idea if you have things documented with LaTeX. Yes, every scientist or engineer needs to know math, and there isn't anything better for writing math than LaTeX.
 
 ---
 
